@@ -24,10 +24,16 @@ router.post(
         user: user
       });
     }
-  );
+);
 
 
-
+router.delete(
+    '/',
+    (_req, res) => {
+      res.clearCookie('token');
+      return res.json({ message: 'success' });
+    }
+);
 
 
 
